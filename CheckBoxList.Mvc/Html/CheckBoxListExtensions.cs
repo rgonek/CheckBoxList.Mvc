@@ -153,7 +153,7 @@ namespace CheckBoxList.Mvc.Html
                 var value = htmlHelper.Hidden(GetChildControlName(name, i, "Value"), item.Value);
 
                 var sb = new StringBuilder();
-                sb.AppendLine("<div>");
+                sb.AppendLine("<div class=\"checkbox\">");
                 sb.AppendLine("<label>");
                 sb.AppendLine(checkbox.ToHtmlString());
                 sb.AppendLine(text.ToHtmlString());
@@ -198,7 +198,7 @@ namespace CheckBoxList.Mvc.Html
             var listItemBuilder = new StringBuilder();
             foreach (var t in list)
             {
-                listItemBuilder.AppendLine("<div>");
+                listItemBuilder.AppendLine("<div class=\"checkbox\">");
                 listItemBuilder.AppendLine("<label>");
                 var checkBox = string.Format(@"<input name=""{0}"" type=""checkbox"" value=""{1}"" {2} />", name, t.Item2, t.Item3 ? @"checked=""checked""" : string.Empty);
                 listItemBuilder.AppendLine(checkBox);
