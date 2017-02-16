@@ -154,10 +154,12 @@ namespace CheckBoxList.Mvc.Html
 
                 var sb = new StringBuilder();
                 sb.AppendLine("<div>");
+                sb.AppendLine("<label>");
                 sb.AppendLine(checkbox.ToHtmlString());
                 sb.AppendLine(text.ToHtmlString());
                 sb.AppendLine(value.ToHtmlString());
                 sb.AppendLine(HttpUtility.HtmlEncode(item.Text));
+                sb.AppendLine("</label>");
                 sb.AppendLine("</div>");
 
                 listItemBuilder.AppendLine(sb.ToString());
@@ -197,9 +199,11 @@ namespace CheckBoxList.Mvc.Html
             foreach (var t in list)
             {
                 listItemBuilder.AppendLine("<div>");
+                listItemBuilder.AppendLine("<label>");
                 var checkBox = string.Format(@"<input name=""{0}"" type=""checkbox"" value=""{1}"" {2} />", name, t.Item2, t.Item3 ? @"checked=""checked""" : string.Empty);
                 listItemBuilder.AppendLine(checkBox);
                 listItemBuilder.AppendLine(t.Item1);
+                listItemBuilder.AppendLine("</label>");
                 listItemBuilder.AppendLine("</div>");
             }
 
